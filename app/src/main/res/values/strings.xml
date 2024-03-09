@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ProductsApp</string>
+    <string name="test_description_big">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit sed tortor sed ornare. Maecenas bibendum fermentum mauris, at consectetur arcu aliquam ut. Sed congue neque vitae libero pretium, at vulputate ante sodales. Ut lacus lorem, finibus sit amet dui sed, venenatis aliquam mi. Integer arcu turpis, porta vel condimentum ac, condimentum vel ante. </string>
+    <string name="test_description_small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit sed tortor sed ornare.</string>
+    <string name="test_title">iPhone 9</string>
+    <string name="test_init_price"><strike>549$</strike></string>
+    <string name="test_price_with_discount">478$</string>
+
+    <string name="card_init_price">%1$d$</string>
+    <string name="card_price_with_discount">%1$d$</string>
+</resources>
