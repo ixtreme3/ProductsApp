@@ -55,7 +55,8 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
 
     implementation("com.github.bumptech.glide:glide:4.15.1")
-//    kapt("com.github.bumptech.glide:ksp:4.14.2")
+
+    implementation("androidx.paging:paging-runtime:3.2.1")
 
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")

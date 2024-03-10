@@ -3,9 +3,23 @@
     <string name="test_description_big">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit sed tortor sed ornare. Maecenas bibendum fermentum mauris, at consectetur arcu aliquam ut. Sed congue neque vitae libero pretium, at vulputate ante sodales. Ut lacus lorem, finibus sit amet dui sed, venenatis aliquam mi. Integer arcu turpis, porta vel condimentum ac, condimentum vel ante. </string>
     <string name="test_description_small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit sed tortor sed ornare.</string>
     <string name="test_title">iPhone 9</string>
-    <string name="test_init_price"><strike>549$</strike></string>
-    <string name="test_price_with_discount">478$</string>
+    <string name="test_init_price"><strike>$549</strike></string>
+    <string name="test_price_with_discount">$478</string>
 
-    <string name="card_init_price">%1$d$</string>
-    <string name="card_price_with_discount">%1$d$</string>
+    <string name="test_brand">Apple</string>
+    <string name="test_discount">13% OFF</string>
+    <string name="test_stock_count">94 pcs in stock</string>
+    <string name="rate_star_icon">Rate star icon</string>
+    <string name="test_rating">4.69</string>
+    <string name="test_category">Category: smartphones</string>
+    <string name="buy">Buy</string>
+
+    <string name="load_error">Something went wrong while loading</string>
+    <string name="try_again">Try again</string>
+    <string name="app_icon">App icon</string>
+
+    <string name="price_placeholder">$%1$s</string>
+    <string name="discount_label_placeholder">%1$s%% OFF</string>
+    <string name="stock_placeholder">%1$s pcs in stock</string>
+    <string name="category_placeholder">Category: %1$s</string>
 </resources>

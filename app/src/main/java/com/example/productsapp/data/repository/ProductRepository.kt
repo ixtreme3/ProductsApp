@@ -1,7 +1,11 @@
 package com.example.productsapp.data.repository
 
+import androidx.paging.PagingData
 import com.example.productsapp.data.model.Product
+import kotlinx.coroutines.flow.Flow
 
 interface ProductRepository {
-    suspend fun getProducts(skip: Int, limit: Int) : List<Product>
+    fun getProducts() : Flow<PagingData<Product>>
+
+    suspend fun getProductById(productId: Int) : Product
 }

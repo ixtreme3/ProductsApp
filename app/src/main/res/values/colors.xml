@@ -5,6 +5,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="rose">#FFD9D9</color>
     <color name="green">#4CAF50</color>
+    <color name="red">#FF1100</color>
     <color name="fancy_blue">#94B0DA</color>
     <color name="card_blue">#C2DFFF</color>
 </resources>

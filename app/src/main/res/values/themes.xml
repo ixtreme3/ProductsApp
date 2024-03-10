@@ -2,8 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.ProductsApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-<!--         <item name="colorPrimary">@color/white</item>-->
-        <item name="android:statusBarColor">@color/fancy_blue</item>
+         <item name="colorPrimary">@color/fancy_blue</item>
     </style>
 
     <style name="Theme.ProductsApp" parent="Base.Theme.ProductsApp" />
@@ -11,5 +10,11 @@
     <style name="roundedImageView" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="bottomRoundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomLeft">18dp</item>
+        <item name="cornerSizeBottomRight">18dp</item>
     </style>
 </resources>
