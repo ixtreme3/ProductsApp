@@ -33,7 +33,6 @@
                 android:layout_marginStart="@dimen/margin_medium"
                 android:layout_marginTop="@dimen/margin_medium"
                 android:text="@string/test_brand"
-                android:textColor="@color/gray"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/productImage" />
 
@@ -43,7 +42,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_extra_small"
                 android:text="@string/test_title"
-                android:textColor="@color/black"
                 android:textSize="@dimen/text_size_extra_extra_large"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/productBrand"
@@ -55,7 +53,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_medium"
                 android:text="@string/test_price_with_discount"
-                android:textColor="@color/black"
                 android:textSize="@dimen/text_size_extra_extra_large"
                 app:layout_constraintStart_toStartOf="@+id/productTitle"
                 app:layout_constraintTop_toBottomOf="@+id/productTitle" />
@@ -66,7 +63,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_small"
                 android:text="@string/test_init_price"
-                android:textColor="@color/gray"
                 android:textSize="@dimen/text_size_large"
                 app:layout_constraintBottom_toBottomOf="@+id/productDiscountPrice"
                 app:layout_constraintStart_toEndOf="@+id/productDiscountPrice"
@@ -103,7 +99,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/margin_medium"
                 android:text="@string/test_stock_count"
-                android:textColor="@color/black"
                 android:textSize="@dimen/text_size_medium"
                 app:layout_constraintBottom_toBottomOf="@+id/discountLabel"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -125,7 +120,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_small"
                 android:text="@string/test_rating"
-                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="@+id/starIcon"
                 app:layout_constraintStart_toEndOf="@+id/starIcon"
                 app:layout_constraintTop_toTopOf="@+id/starIcon" />
@@ -136,7 +130,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_small"
                 android:text="@string/test_category"
-                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="@+id/starIcon"
                 app:layout_constraintTop_toBottomOf="@+id/starIcon" />
 
@@ -155,7 +148,6 @@
                 android:layout_marginHorizontal="@dimen/margin_medium"
                 android:text="@string/test_description_big"
                 android:layout_marginTop="@dimen/margin_medium"
-                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view" />
@@ -170,7 +162,6 @@
         android:layout_marginBottom="@dimen/margin_medium"
         android:layout_marginEnd="@dimen/margin_medium"
         android:text="@string/buy"
-        android:backgroundTint="@color/fancy_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:icon="@drawable/ic_cart" />

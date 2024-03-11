@@ -2,10 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.ProductsApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-         <item name="colorPrimary">@color/fancy_blue</item>
+<!--         <item name="colorPrimary">@color/fancy_blue</item>-->
     </style>
-
-    <style name="Theme.ProductsApp" parent="Base.Theme.ProductsApp" />
 
     <style name="roundedImageView" parent="">
         <item name="cornerFamily">rounded</item>
