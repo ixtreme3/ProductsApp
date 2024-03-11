@@ -13,11 +13,9 @@ import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityRetainedComponent
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
-// @HiltViewModel
 class ProductViewModel @AssistedInject constructor(
     private val productRepository: ProductRepository,
     @Assisted private val productId: Int

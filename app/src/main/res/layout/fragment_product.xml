@@ -15,20 +15,18 @@
             android:layout_height="wrap_content"
             tools:context=".ui.product.ProductFragment">
 
-
             <ViewFlipper
                 android:id="@+id/viewFlipper"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:autoStart="true"
                 android:flipInterval="2500"
                 android:inAnimation="@anim/slide_in_right"
                 android:outAnimation="@anim/slide_in_left"
-                app:layout_constraintTop_toTopOf="parent">
-
-            </ViewFlipper>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@color/gray" />
 
             <TextView
                 android:id="@+id/productBrand"
@@ -77,9 +75,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:layout_marginStart="@dimen/margin_small"
-                android:paddingHorizontal="4dp"
                 android:background="@drawable/disount_label_background"
                 android:gravity="center"
+                android:paddingHorizontal="4dp"
                 android:text="@string/test_discount"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_medium"
@@ -149,11 +147,11 @@
                 android:id="@+id/productDescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/margin_medium"
+                android:layout_margin="@dimen/margin_medium"
                 android:text="@string/test_description_big"
-                android:layout_marginTop="@dimen/margin_medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -163,11 +161,11 @@
         android:id="@+id/purchaseButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_medium"
         android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
         android:text="@string/buy"
+        app:icon="@drawable/ic_cart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:icon="@drawable/ic_cart" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

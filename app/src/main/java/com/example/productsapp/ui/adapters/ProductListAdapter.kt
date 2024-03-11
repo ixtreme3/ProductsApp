@@ -11,7 +11,8 @@ import com.example.productsapp.R
 import com.example.productsapp.data.model.Product
 import com.example.productsapp.databinding.ItemProductBinding
 
-class ProductListAdapter : PagingDataAdapter<Product, ProductListAdapter.ProductViewHolder>(ProductDiffCallback()) {
+class ProductListAdapter :
+    PagingDataAdapter<Product, ProductListAdapter.ProductViewHolder>(ProductDiffCallback()) {
     var callback: Callback? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
@@ -28,7 +29,7 @@ class ProductListAdapter : PagingDataAdapter<Product, ProductListAdapter.Product
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Product) {
             binding.apply {
-                root.setOnClickListener{ callback?.onItemClick(item) }
+                root.setOnClickListener { callback?.onItemClick(item) }
                 cardTitle.text = item.title
                 cardDescription.text = item.description
                 cardInitialPrice.text =

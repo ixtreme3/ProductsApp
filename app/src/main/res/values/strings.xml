@@ -14,7 +14,7 @@
     <string name="test_category">Category: smartphones</string>
     <string name="buy">Buy</string>
 
-    <string name="load_error">Something went wrong while loading</string>
+    <string name="load_error">An error occurred while loading. Please try again.</string>
     <string name="try_again">Try again</string>
     <string name="app_icon">App icon</string>
 
