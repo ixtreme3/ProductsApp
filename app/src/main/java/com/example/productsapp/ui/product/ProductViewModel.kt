@@ -19,15 +19,22 @@ import kotlin.math.roundToInt
 class ProductViewModel @AssistedInject constructor(
     private val productRepository: ProductRepository,
     @Assisted private val productId: Int
-) :
-    ViewModel() {
+) : ViewModel() {
 
     private val _product = MutableLiveData<Product>()
     val product: LiveData<Product> get() = _product
 
+    private val _errorState = MutableLiveData<String>()
+    val errorState: LiveData<String> get() = _errorState
+
     init {
         viewModelScope.launch {
-            _product.value = productRepository.getProductById(productId)
+            try {
+                _product.value = productRepository.getProductById(productId)
+            } catch (e: Exception) {
+                _errorState.postValue(e.message)
+                e.printStackTrace()
+            }
         }
     }
 
