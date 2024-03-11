@@ -9,12 +9,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.productsapp.R
 import com.example.productsapp.databinding.FragmentProductBinding
+import com.google.android.material.imageview.ShapeableImageView
+import com.google.android.material.shape.CornerFamily
+import com.google.android.material.shape.ShapeAppearanceModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -82,10 +87,10 @@ class ProductFragment : Fragment() {
                 )
 
                 productDescription.text = product.description
-                Glide.with(requireActivity())
-                    .load(product.thumbnail)
-                    .placeholder(R.drawable.no_image)
-                    .into(productImage)
+
+                product.images.forEach { image ->
+                    createAndLoadImageView(image, viewFlipper)
+                }
 
                 binding.purchaseButton.setOnClickListener {
                     openBrowserWithText(product.title)
@@ -97,6 +102,34 @@ class ProductFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    private fun createAndLoadImageView(imageUrl: String, parentLayout: ViewGroup) {
+        if (imageUrl.contains("thumbnail")) return
+
+        val imageView = ShapeableImageView(context)
+
+        imageView.layoutParams = ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+        )
+
+        imageView.scaleType = ImageView.ScaleType.CENTER_CROP
+
+        val cornerSize = requireContext().resources.getDimension(R.dimen.image_corner_size)
+        val roundedCorner = CornerFamily.ROUNDED
+
+        imageView.shapeAppearanceModel = ShapeAppearanceModel.builder()
+            .setBottomLeftCorner(roundedCorner, cornerSize)
+            .setBottomRightCorner(roundedCorner, cornerSize)
+            .build()
+
+        Glide.with(requireContext())
+            .load(imageUrl)
+            .apply(RequestOptions().centerCrop())
+            .into(imageView)
+
+        parentLayout.addView(imageView)
     }
 
     private fun openBrowserWithText(text: String) {
