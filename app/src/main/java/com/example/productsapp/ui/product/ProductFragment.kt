@@ -5,12 +5,12 @@ import android.graphics.Paint
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -25,6 +25,7 @@ import com.google.android.material.shape.ShapeAppearanceModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class ProductFragment : Fragment() {
@@ -44,10 +45,10 @@ class ProductFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentProductBinding.inflate(inflater, container, false)
-        val progressBar = requireActivity().findViewById<ProgressBar>(R.id.progressBar)
 
+        val progressBar = requireActivity().findViewById<ProgressBar>(R.id.progressBar)
         progressBar.visibility = View.VISIBLE
-        binding.root.visibility = View.INVISIBLE
+        changeFragmentVisibility(View.INVISIBLE)
 
         setupObservers(progressBar)
 
@@ -56,19 +57,23 @@ class ProductFragment : Fragment() {
 
     private fun setupObservers(progressBar: ProgressBar) {
         viewModel.errorState.observe(viewLifecycleOwner) { error ->
-            displayErrorSnackbar(error)
+            displayErrorSnackBar(error)
             progressBar.visibility = View.GONE
             findNavController().navigateUp()
         }
 
         viewModel.product.observe(viewLifecycleOwner) { product ->
             progressBar.visibility = View.INVISIBLE
-            binding.root.visibility = View.VISIBLE
+            changeFragmentVisibility(View.VISIBLE)
             displayProductDetails(product)
         }
     }
 
-    private fun displayErrorSnackbar(error: String) {
+    private fun changeFragmentVisibility(visibility: Int) {
+        binding.root.visibility = visibility
+    }
+
+    private fun displayErrorSnackBar(error: String) {
         Snackbar.make(binding.root, error, Snackbar.LENGTH_LONG).show()
     }
 
@@ -136,7 +141,7 @@ class ProductFragment : Fragment() {
         if (intent.resolveActivity(requireContext().packageManager) != null) {
             startActivity(intent)
         } else {
-            displayErrorSnackbar(getString(R.string.intent_resolve_error))
+            displayErrorSnackBar(getString(R.string.intent_resolve_error))
             Log.i(TAG, "Activity not resolved")
         }
     }

@@ -7,12 +7,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.productsapp.data.model.Product
 import com.example.productsapp.data.repository.ProductRepository
-import dagger.Module
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
-import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityRetainedComponent
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
@@ -38,12 +35,6 @@ class ProductViewModel @AssistedInject constructor(
         }
     }
 
-    fun getProductById(productId: Int) {
-        viewModelScope.launch {
-            _product.value = productRepository.getProductById(productId)
-        }
-    }
-
     fun calcDiscountPrice(price: Double, discountPercentage: Double): Int {
         val priceWithDiscount = price * (1 - discountPercentage / 100)
         return priceWithDiscount.roundToInt()
@@ -66,7 +57,3 @@ class ProductViewModel @AssistedInject constructor(
         }
     }
 }
-
-@Module
-@InstallIn(ActivityRetainedComponent::class)
-interface AssistedInjectModule
